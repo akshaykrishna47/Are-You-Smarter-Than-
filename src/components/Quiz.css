@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+.ret-06__win {
+  background: rgba(26,11,46,.55);
+  backdrop-filter: blur(8px);
+  border: 2px solid #ff71ce;
+  border-radius: 6px;
+  text-align: left;
+  display:grid;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(1,205,254,.4);
+  margin: auto;
+}
+
+.ret-06__winbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #b967ff, #ff71ce);
+  padding: 7px 12px;
+  border-radius: 4px 4px 0 0;
+}
+
+.ret-06__winbar i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: .85;
+}
+
+.ret-06__winbar span {
+  margin-left: 6px;
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.ret-06__wincontent {
+  padding: 18px 20px;
+  font-size: .82rem;
+  line-height: 1.7;
+  color: #e9d5ff;
+}
+
+.ret-06__row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.ret-06__btn {
+  flex: 0 0 calc(50% - 0.5rem);
+  min-width: 130px;
+  text-align: center;
+  text-decoration: none;
+  padding: 11px;
+  border: 2px solid #f305ff;
+  color: #f305ff;
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  background: rgba(5,255,161,.06);
+  box-shadow: 0 0 14px rgba(5,255,161,.3);
+  transition: .25s;
+  cursor: pointer;
+}
+
+.ret-06__btn:hover:not(:disabled) {
+  background: #400145;
+  color: #ffffff;
+  box-shadow: 0 0 26px #3d0158;
+}
+
+/* Answer feedback */
+.ret-06__btn--blink {
+  animation: answerBlink 0.9s steps(1, end) forwards;
+}
+
+.ret-06__btn--correct {
+  border-color: #05ffa1 !important;
+  background: rgba(5,255,161,.35) !important;
+  color: #05ffa1 !important;
+  box-shadow: 0 0 26px #05ffa1 !important;
+}
+
+.ret-06__btn--wrong {
+  border-color: #f60000 !important;
+  background: rgba(255,41,117,.35) !important;
+  color: #ff2929 !important;
+  box-shadow: 0 0 26px #ff2929 !important;
+}
+
+@keyframes answerBlink {
+  0%   { opacity: 1; }
+  16%  { opacity: 0; }
+  33%  { opacity: 1; }
+  50%  { opacity: 0; }
+  66%  { opacity: 1; }
+  83%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.ret-06__gameover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.ret-06__gameover-box {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(26,11,46,.55);
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(1,205,254,.4);
+}
+
+.ret-06__gameover-box--win {
+  border: 2px solid #05ffa1;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(5,255,161,.4), 0 0 40px rgba(5,255,161,.2);
+}
+
+.ret-06__gameover-box--lose {
+  border: 2px solid #ff2975;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(255,41,117,.4), 0 0 40px rgba(255,41,117,.2);
+}
+
+.ret-06__gameover-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 4px 4px 0 0;
+}
+
+.ret-06__gameover-bar--win {
+  background: linear-gradient(90deg, #05ffa1, #01cdfe);
+}
+
+.ret-06__gameover-bar--lose {
+  background: linear-gradient(90deg, #ff2975, #b967ff);
+}
+
+.ret-06__gameover-bar i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: .85;
+}
+
+.ret-06__gameover-bar span {
+  margin-left: 6px;
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.ret-06__gameover-body {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ret-06__gameover-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  margin: 0;
+}
+
+.ret-06__gameover-title--win {
+  color: #05ffa1;
+  text-shadow: 0 0 24px rgba(5,255,161,.6);
+}
+
+.ret-06__gameover-title--lose {
+  color: #ff2975;
+  text-shadow: 0 0 24px rgba(255,41,117,.6);
+}
+
+.ret-06__gameover-msg {
+  font-size: .84rem;
+  color: #e9d5ff;
+  letter-spacing: .08em;
+  margin: 0 0 8px;
+}

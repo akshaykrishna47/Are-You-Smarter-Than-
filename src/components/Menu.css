@@ -1,0 +1,277 @@
+/* ─── Menu — neon pricing-card aesthetic adapted for the AYST menu ───── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Exo+2:wght@300;700;900&display=swap');
+
+/* @property is document-level; declared once here. */
+@property --mn-crd-a {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.menu-neon {
+  position: relative;
+  min-height: 100vh;
+  background: #070711;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #f0f0ff;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 56px 16px 64px;
+}
+
+.menu-neon *,
+.menu-neon *::before,
+.menu-neon *::after { box-sizing: border-box; }
+
+/* Ambient backdrop glow */
+.menu-neon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 15%, rgba(0,180,255,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 85% 85%, rgba(180,0,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.menu-stage {
+  position: relative;
+  z-index: 1;
+  max-width: 460px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Title */
+.menu-title {
+    color: white;
+  text-align: center;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 900;
+  font-size: 32px;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.menu-title span {
+  background: linear-gradient(135deg, #00eeff, #ff2d78 50%, #bf5fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(191,95,255,0.35));
+}
+
+/* Card shell — rotating conic-gradient border, same technique as the pricing cards */
+.menu-card {
+  position: relative;
+  padding: 26px 22px 24px;
+  border-radius: 4px;
+  background: rgba(12,12,28,0.95);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.menu-card::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 6px;
+  background: conic-gradient(
+    from var(--mn-crd-a),
+    var(--c1) 0deg,
+    var(--c2) 90deg,
+    transparent 130deg,
+    transparent 230deg,
+    var(--c2) 270deg,
+    var(--c1) 360deg
+  );
+  animation: mn-crd-spin 4s linear infinite;
+  z-index: 0;
+}
+@keyframes mn-crd-spin { to { --mn-crd-a: 360deg; } }
+
+.menu-card::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  border-radius: 3px;
+  background: #0c0c1e;
+  z-index: 1;
+}
+.menu-card > * { position: relative; z-index: 2; }
+
+.menu-card-cyan   { --c1: #00eeff; --c2: rgba(0,238,255,0.3); }
+.menu-card-pink   { --c1: #ff2d78; --c2: rgba(255,45,120,0.3); }
+.menu-card-violet { --c1: #bf5fff; --c2: rgba(191,95,255,0.3); }
+
+/* Card heading / toggle */
+.menu-card-tier {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  color: inherit;
+}
+.menu-card-cyan   .menu-card-tier { color: #00eeff; text-shadow: 0 0 10px #00eeff; }
+.menu-card-pink   .menu-card-tier { color: #ff2d78; text-shadow: 0 0 10px #ff2d78; }
+.menu-card-violet .menu-card-tier { color: #bf5fff; text-shadow: 0 0 10px #bf5fff; }
+
+.menu-card-toggle { cursor: pointer; }
+.menu-card-toggle .chevron { font-size: 10px; transition: transform 0.25s ease; }
+.menu-card-toggle[aria-expanded="true"] .chevron { transform: rotate(90deg); }
+
+.menu-card-divider { height: 1px; background: rgba(255,255,255,0.07); }
+.menu-card-cyan   .menu-card-divider { background: linear-gradient(90deg, transparent, rgba(0,238,255,0.35), transparent); }
+.menu-card-pink   .menu-card-divider { background: linear-gradient(90deg, transparent, rgba(255,45,120,0.35), transparent); }
+.menu-card-violet .menu-card-divider { background: linear-gradient(90deg, transparent, rgba(191,95,255,0.35), transparent); }
+
+.menu-card-body {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(210,210,240,0.75);
+}
+
+/* How-to-play steps, numbered (order genuinely matters here) */
+.menu-how-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  counter-reset: how-step;
+}
+.menu-how-list li {
+  font-size: 13px;
+  color: rgba(210,210,240,0.75);
+  padding-left: 22px;
+  position: relative;
+  line-height: 1.5;
+  counter-increment: how-step;
+}
+.menu-how-list li::before {
+  content: counter(how-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ff2d78;
+  text-shadow: 0 0 6px #ff2d78;
+}
+
+.menu-badge {
+  position: absolute;
+  top: -11px;
+  right: 18px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #ff2d78, #d4006a);
+  color: #fff;
+  z-index: 10;
+  text-shadow: 0 0 6px rgba(255,45,120,0.8);
+  box-shadow: 0 0 12px rgba(255,45,120,0.5);
+}
+
+/* Difficulty stepper */
+.difficulty-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+.difficulty-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(191,95,255,0.5);
+  background: rgba(191,95,255,0.1);
+  color: #bf5fff;
+  font-size: 16px;
+  text-shadow: 0 0 8px rgba(191,95,255,0.8);
+  box-shadow: 0 0 12px rgba(191,95,255,0.15);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.difficulty-arrow:hover { background: rgba(191,95,255,0.22); box-shadow: 0 0 22px rgba(191,95,255,0.4); }
+.difficulty-label {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 130px;
+  text-align: center;
+  color: #f0f0ff;
+}
+
+/* Back button */
+.menu-footer { display: flex; justify-content: center; margin-top: 4px; }
+.menu-cta {
+  padding: 10px 10px;
+  border-radius: 50%;
+  border: 2px solid #ff0505;
+  color: #ff0505;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  background: rgba(255, 5, 5, 0.06);
+  box-shadow: 0 0 18px rgba(255, 5, 5, 0.35);
+  cursor: pointer;
+  border-radius:4px;
+  transition: .25s;
+}
+.menu-cta:hover {
+  background: #ff0505;
+  color: #1a0b2e;
+  box-shadow: 0 0 32px #ff0505;
+}
+
+.menu-ctas {
+  padding: 14px 28px;
+  border-radius: 50%;
+  border: 2px solid #05ffa1;
+  color: #05ffa1;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  background: rgba(5,255,161,.06);
+  box-shadow: 0 0 18px rgba(5,255,161,.35);
+  cursor: pointer;
+  border-radius:4px;
+  transition: .25s;
+}
+.menu-ctas:hover {
+  background: #05ffa1;
+  color: #1a0b2e;
+  box-shadow: 0 0 32px #05ffa1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-card::before { animation: none !important; }
+}
+
+@media (max-width: 380px) {
+  .menu-title { font-size: 26px; }
+  .difficulty-label { min-width: 100px; font-size: 14px; }
+}

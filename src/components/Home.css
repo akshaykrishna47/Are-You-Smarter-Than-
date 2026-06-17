@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+.home-neon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Space Mono', monospace;
+}
+
+.home-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.home-logo {
+  width: 70%;
+  max-width: 340px;
+  filter: drop-shadow(0 0 18px rgba(5,255,161,.35));
+}
+
+.home-btn {
+  padding: 14px 14px 14px 20px;
+  border-radius: 50%;
+  border: 2px solid #05ffa1;
+  color: #05ffa1;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  background: rgba(5,255,161,.06);
+  box-shadow: 0 0 18px rgba(5,255,161,.35);
+  cursor: pointer;
+  transition: .25s;
+}
+
+.home-btn:hover {
+  background: #05ffa1;
+  color: #1a0b2e;
+  box-shadow: 0 0 32px #05ffa1;
+}
