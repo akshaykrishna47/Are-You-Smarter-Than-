@@ -129,7 +129,7 @@ export default function Quiz() {
                         <p className="ret-06__gameover-msg">
                             {won
                                 ? `You are smarter than a ${difficulty}.`
-                                : `You made it to question ${currentIndex + 1} of 10.`}
+                                : `You made it to question ${currentIndex + 1} of 5.`}
                         </p>
                         <Link to="/" onClick={handleQuit} style={{ marginTop: "8px" }}>
                             <button type="button" className="ret-06__btn">Quit</button>
