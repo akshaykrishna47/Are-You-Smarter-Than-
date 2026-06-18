@@ -1,5 +1,3 @@
-Visit Webpage: https://akshaykrishna47.github.io/Are-You-Smarter-Than-/
-
 # Are You Smarter Than? (AYST)
 
 ## Project Description
@@ -22,8 +20,7 @@ Players must answer five questions correctly to win. Questions and answer choice
 
 * React
 * React Router DOM
-* JavaScript (ES6+)
-* HTML5
+* JavaScript
 * CSS3
 
 ### Browser APIs
@@ -48,7 +45,7 @@ Ensure the following are installed:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ayst.git
+git clone https://github.com/akshaykrishna47/Are-You-Smarter-Than-.git
 cd ayst
 ```
 
@@ -88,7 +85,7 @@ npm run preview
 
 Live Application:
 
-https://your-deployment-link.com
+[https://your-deployment-link.com](https://akshaykrishna47.github.io/Are-You-Smarter-Than-/)
 
 ---
 
