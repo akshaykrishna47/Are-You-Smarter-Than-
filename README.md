@@ -46,7 +46,7 @@ Ensure the following are installed:
 
 ```bash
 git clone https://github.com/akshaykrishna47/Are-You-Smarter-Than-.git
-cd ayst
+cd Are-You-Smarter-Than-
 ```
 
 ### Install Dependencies
