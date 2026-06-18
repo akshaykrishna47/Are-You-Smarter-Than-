@@ -71,31 +71,31 @@ export default function Quiz() {
         );
     }, [difficulty, questions, currentIndex, gameOver, won]);
 
-const QUESTION_TIME = 10;
-const [timeLeft, setTimeLeft] = useState(QUESTION_TIME);
+    const QUESTION_TIME = 10;
+    const [timeLeft, setTimeLeft] = useState(QUESTION_TIME);
 
-// Reset when question changes
-useEffect(() => {
-    setTimeLeft(QUESTION_TIME);
-}, [currentIndex]);
+    // Reset when question changes
+    useEffect(() => {
+        setTimeLeft(QUESTION_TIME);
+    }, [currentIndex]);
 
-// Countdown
-useEffect(() => {
-    if (gameOver || answerResult !== null) return;
+    // Countdown
+    useEffect(() => {
+        if (gameOver || answerResult !== null) return;
 
-    const interval = setInterval(() => {
-        setTimeLeft((prev) => prev - 1);
-    }, 1000);
+        const interval = setInterval(() => {
+            setTimeLeft((prev) => prev - 1);
+        }, 1000);
 
-    return () => clearInterval(interval);
-}, [gameOver, answerResult]);
+        return () => clearInterval(interval);
+    }, [gameOver, answerResult]);
 
-// Time ran out
-useEffect(() => {
-    if (timeLeft <= 0) {
-        setGameOver(true);
-    }
-}, [timeLeft]);
+    // Time ran out
+    useEffect(() => {
+        if (timeLeft <= 0) {
+            setGameOver(true);
+        }
+    }, [timeLeft]);
 
     function handleAnswer(option) {
     if (answerResult !== null) return; // locked while animating
