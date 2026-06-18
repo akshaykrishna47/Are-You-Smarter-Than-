@@ -71,11 +71,15 @@ export default function Menu(){
                 <section className="menu-card menu-card-orange">
                     <div className="menu-card-tier">Name</div>
                     <div className="menu-card-divider" aria-hidden="true"></div>
-                    <div className="difficulty-box">
-                        <label>
-                            Enter Username
-                        </label>
-                        <input type="text" placeholder="Anonymous" onChange={handlename} maxLength={20}/>
+                    <div className="difficulty-box" style={{ flexDirection: "column", gap: "10px" }}>
+                        <label className="menu-input-label">Enter Username</label>
+                        <input
+                            type="text"
+                            placeholder="Anonymous"
+                            onChange={handlename}
+                            maxLength={20}
+                            className="menu-input"
+                        />
                     </div>
                 </section>                
 
@@ -100,7 +104,7 @@ export default function Menu(){
                 </section>
 
                 <div className="menu-footer">
-                    <Link to="/Quiz" state={{ difficulty: difficulties[difficulty] }}>
+                    <Link to="/Quiz" state={{ difficulty: difficulties[difficulty] ,username: username}}>
                         <button type="button" className="menu-ctas">Start Game</button>
                     </Link>
                 </div>

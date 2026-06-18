@@ -37,6 +37,7 @@ export default function Quiz() {
     const location = useLocation();
     const saved = useRef(getSavedState()).current;
     const difficulty = location.state?.difficulty ?? saved?.difficulty;
+    const username = location.state?.username ?? saved?.username;
     const resumable = Boolean(saved) && saved.difficulty === difficulty;
 
     const [questions]    = useState(() => resumable ? saved.questions    : buildQuestions(difficulty));
@@ -96,6 +97,7 @@ export default function Quiz() {
             difficulty={difficulty}
             currentIndex={currentIndex}
             onQuit={handleQuit}
+            username ={username}
         />
     );
 

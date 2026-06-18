@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function GameOver({ won, difficulty, currentIndex, onQuit }) {
+export default function GameOver({ won, difficulty, currentIndex, onQuit, username }) {
     return (
         <div className="ret-06__gameover">
 
@@ -35,8 +35,8 @@ export default function GameOver({ won, difficulty, currentIndex, onQuit }) {
                     </h1>
                     <p className="ret-06__gameover-msg">
                         {won
-                            ? `You are smarter than a ${difficulty}.`
-                            : `You made it to question ${currentIndex + 1} of 5.`}
+                            ? `${username}, You are smarter than a ${difficulty}.`
+                            : `${username}, You made it to question ${currentIndex + 1} of 5.`}
                     </p>
                     <Link to="/" onClick={onQuit} style={{ marginTop: "8px" }}>
                         <button type="button" className="ret-06__btn">Quit</button>

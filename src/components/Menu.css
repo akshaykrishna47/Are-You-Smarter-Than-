@@ -270,6 +270,34 @@
   box-shadow: 0 0 32px #05ffa1;
 }
 
+.menu-input-label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ff9500;
+    text-shadow: 0 0 8px rgba(255,149,0,0.6);
+}
+
+.menu-input {
+    width: 100%;
+    background: #0c0c1e;
+    border: 1px solid rgba(255,149,0,0.4);
+    border-radius: 4px;
+    padding: 10px 14px;
+    color: #f0f0ff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.menu-input::placeholder { color: rgba(240,240,255,0.3); }
+
+.menu-input:focus {
+    border-color: #ff9500;
+    box-shadow: 0 0 14px rgba(255,149,0,0.3);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .menu-card::before { animation: none !important; }
 }
