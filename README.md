@@ -137,6 +137,9 @@ src/
 │   ├── Menu.jsx
 │   ├── Quiz.css
 │   ├── Quiz.jsx
+│   ├── QuizOptions.jsx
+│   ├── QuizTimer.jsx
+│   ├── GameOver.jsx
 │   ├── easyQns.js
 │   ├── medQns.js
 │   └── hardQns.js
