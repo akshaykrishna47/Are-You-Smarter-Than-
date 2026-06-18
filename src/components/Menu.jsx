@@ -5,6 +5,7 @@ import './Menu.css';
 
 export default function Menu(){
     const [showHow, setHow] = useState(false);
+    const [username,setUsername] = useState("Anonymous")
 
     const handleHowToPlay = () => {
         setHow(!showHow);
@@ -21,6 +22,10 @@ export default function Menu(){
     function handleDifficultyprev(){
         const newDifficulty = (difficulty+3-1)%3;
         setDifficulty(newDifficulty);
+    }
+    function handlename(e){
+        if(e.target.value.length>0) setUsername(e.target.value);
+        else setUsername("Anonymous");
     }
 
     return (
@@ -62,6 +67,17 @@ export default function Menu(){
                         </div>
                     )}
                 </section>
+
+                <section className="menu-card menu-card-orange">
+                    <div className="menu-card-tier">Name</div>
+                    <div className="menu-card-divider" aria-hidden="true"></div>
+                    <div className="difficulty-box">
+                        <label>
+                            Enter Username
+                        </label>
+                        <input type="text" placeholder="Anonymous" onChange={handlename} maxLength={20}/>
+                    </div>
+                </section>                
 
                 <section className="menu-card menu-card-violet">
                     <div className="menu-card-tier">Set Difficulty</div>

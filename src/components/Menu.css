@@ -105,6 +105,7 @@
 .menu-card-cyan   { --c1: #00eeff; --c2: rgba(0,238,255,0.3); }
 .menu-card-pink   { --c1: #ff2d78; --c2: rgba(255,45,120,0.3); }
 .menu-card-violet { --c1: #bf5fff; --c2: rgba(191,95,255,0.3); }
+.menu-card-orange { --c1: #ff9500; --c2: rgba(255,149,0,0.3); }
 
 /* Card heading / toggle */
 .menu-card-tier {
@@ -126,6 +127,7 @@
 .menu-card-cyan   .menu-card-tier { color: #00eeff; text-shadow: 0 0 10px #00eeff; }
 .menu-card-pink   .menu-card-tier { color: #ff2d78; text-shadow: 0 0 10px #ff2d78; }
 .menu-card-violet .menu-card-tier { color: #bf5fff; text-shadow: 0 0 10px #bf5fff; }
+.menu-card-orange .menu-card-tier { color: #ff9500; text-shadow: 0 0 10px #ff9500; }
 
 .menu-card-toggle { cursor: pointer; }
 .menu-card-toggle .chevron { font-size: 10px; transition: transform 0.25s ease; }
@@ -135,6 +137,7 @@
 .menu-card-cyan   .menu-card-divider { background: linear-gradient(90deg, transparent, rgba(0,238,255,0.35), transparent); }
 .menu-card-pink   .menu-card-divider { background: linear-gradient(90deg, transparent, rgba(255,45,120,0.35), transparent); }
 .menu-card-violet .menu-card-divider { background: linear-gradient(90deg, transparent, rgba(191,95,255,0.35), transparent); }
+.menu-card-orange .menu-card-divider { background: linear-gradient(90deg, transparent, rgba(255,149,0,0.35), transparent); }
 
 .menu-card-body {
   font-size: 13.5px;
