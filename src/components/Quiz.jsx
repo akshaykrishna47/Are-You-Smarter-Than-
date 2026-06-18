@@ -80,7 +80,7 @@ export default function Quiz() {
                 setSelectedOption(null);
                 setAnswerResult(null);
                 if (!isCorrect)                    setGameOver(true);
-                else if (currentIndex + 1 >= 1)    { setWon(true); setGameOver(true); }
+                else if (currentIndex + 1 >= 5)    { setWon(true); setGameOver(true); }
                 else                               setCurrentIndex(currentIndex + 1);
             }, 2000);
         }, 900);
