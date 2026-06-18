@@ -19,29 +19,29 @@
 }
 
 .home-logo {
-  width: 70%;
+  width: 90%;
   max-width: 340px;
   filter: drop-shadow(0 0 18px rgba(5,255,161,.35));
 }
 
 .home-btn {
-  padding: 14px 14px 14px 20px;
+  padding: 18px 18px 18px 26px;
   border-radius: 50%;
-  border: 2px solid #05ffa1;
-  color: #05ffa1;
+  border: 2px solid #ffe605;
+  color: #ffd505;
   font-family: 'Space Mono', monospace;
   font-weight: 700;
-  font-size: .88rem;
+  font-size: 1.5rem;
   letter-spacing: .22em;
   text-transform: uppercase;
   background: rgba(5,255,161,.06);
-  box-shadow: 0 0 18px rgba(5,255,161,.35);
+  box-shadow: 0 0 18px rgba(222, 255, 5, 0.35);
   cursor: pointer;
   transition: .25s;
 }
 
 .home-btn:hover {
-  background: #05ffa1;
+  background: #fbff05;
   color: #1a0b2e;
-  box-shadow: 0 0 32px #05ffa1;
+  box-shadow: 0 0 32px #ffee05;
 }

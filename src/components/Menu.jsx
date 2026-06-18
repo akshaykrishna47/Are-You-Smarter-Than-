@@ -26,7 +26,7 @@ export default function Menu(){
     return (
         <div className="menu-neon">
             <div className="menu-stage">
-                <h1 className="menu-title">Welcome to <span>AYST</span></h1>
+                <h1 className="menu-title"><span>Welcome to  AYST</span></h1>
 
                 <section className="menu-card menu-card-cyan">
                     <div className="menu-card-tier">Game Description</div>
