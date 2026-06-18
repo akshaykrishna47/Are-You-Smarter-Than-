@@ -109,13 +109,14 @@ Live Application:
 * Randomized questions
 * Randomized answer options
 * Animated answer feedback
+* Countdown Timer
 * Progress tracking
 
 ### Game Over Screen
 
 * Victory screen
 * Defeat screen
-* Restart/Quit functionality
+* Quit functionality
 
 ### Session Persistence
 
@@ -130,8 +131,11 @@ Live Application:
 src/
 │
 ├── components/
+│   ├── Home.css
 │   ├── Home.jsx
+│   ├── Menu.css
 │   ├── Menu.jsx
+│   ├── Quiz.css
 │   ├── Quiz.jsx
 │   ├── easyQns.js
 │   ├── medQns.js
