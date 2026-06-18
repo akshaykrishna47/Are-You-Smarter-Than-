@@ -177,7 +177,6 @@ src/
 ## Future Improvements
 
 * Leaderboard system
-* Timer-based challenges
 * Additional question categories
 * Sound effects and music
 * User accounts and progress tracking
