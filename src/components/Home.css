@@ -25,19 +25,23 @@
 }
 
 .home-btn {
-  padding: 18px 18px 18px 26px;
+  width: 56px;
+  height: 56px;
+
+  display: grid;
+  place-items: center;
+
   border-radius: 50%;
   border: 2px solid #ffe605;
   color: #ffd505;
-  font-family: 'Space Mono', monospace;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  background: rgba(5,255,161,.06);
+
+  background: rgba(5, 255, 161, 0.06);
   box-shadow: 0 0 18px rgba(222, 255, 5, 0.35);
+
   cursor: pointer;
-  transition: .25s;
+  transition: 0.25s;
+
+  text-decoration: none; /* if applied to Link */
 }
 
 .home-btn:hover {
