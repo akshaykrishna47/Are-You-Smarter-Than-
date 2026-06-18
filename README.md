@@ -1,18 +1,190 @@
 Visit Webpage: https://akshaykrishna47.github.io/Are-You-Smarter-Than-/
 
-# React + Vite
+# Are You Smarter Than? (AYST)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+Are You Smarter Than? (AYST) is a React-based trivia quiz game inspired by educational challenge shows. Players select a difficulty level and answer a series of randomly selected multiple-choice questions to test their knowledge.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The game features three difficulty levels:
 
-## React Compiler
+* 5 Year Old
+* 8th Grader
+* Scholar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Players must answer five questions correctly to win. Questions and answer choices are randomized each game, and progress is automatically saved using session storage so users can continue after refreshing the page.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies Used
+
+### Frontend
+
+* React
+* React Router DOM
+* JavaScript (ES6+)
+* HTML5
+* CSS3
+
+### Browser APIs
+
+* Session Storage API
+
+### Build Tool
+
+* Vite
+
+---
+
+## Installation and Setup
+
+### Prerequisites
+
+Ensure the following are installed:
+
+* Node.js
+* npm
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/ayst.git
+cd ayst
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+Open your browser and navigate to:
+
+```text
+http://localhost:5173
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## Live Demo
+
+Live Application:
+
+https://your-deployment-link.com
+
+---
+
+## Features
+
+### Home Page
+
+* Neon-themed landing page
+* Game logo display
+* Start button navigation
+
+### Menu Page
+
+* Game description
+* Expandable "How to Play" section
+* Difficulty selection controls
+* Start game button
+
+### Quiz Page
+
+* Randomized questions
+* Randomized answer options
+* Animated answer feedback
+* Progress tracking
+
+### Game Over Screen
+
+* Victory screen
+* Defeat screen
+* Restart/Quit functionality
+
+### Session Persistence
+
+* Saves quiz progress automatically
+* Allows users to continue after refreshing the page
+
+---
+
+## Project Structure
+
+```text
+src/
+│
+├── components/
+│   ├── Home.jsx
+│   ├── Menu.jsx
+│   ├── Quiz.jsx
+│   ├── easyQns.js
+│   ├── medQns.js
+│   └── hardQns.js
+│
+├── images/
+│   └── logo.png
+│
+├── App.jsx
+├── App.css
+└── main.jsx
+```
+
+---
+
+## Screenshots
+
+### Home Page
+
+![Home Page](![alt text](image.png))
+
+### Menu Page
+
+![Menu Page](![alt text](image-1.png)g)
+
+### Quiz Page
+
+![Quiz Page](screenshots/quiz-page.png)
+
+### Victory Screen
+
+![Victory Screen](![alt text](image-3.png))
+
+### Game Over Screen
+
+![Game Over Screen](![alt text](image-2.png))
+
+---
+
+## Future Improvements
+
+* Leaderboard system
+* Timer-based challenges
+* Additional question categories
+* Sound effects and music
+* User accounts and progress tracking
+* Difficulty progression system
+
+---
+
+## Author
+
+Developed as part of a React web application project.
