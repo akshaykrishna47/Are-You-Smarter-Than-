@@ -6,6 +6,7 @@ import { hard } from "./hardQns";
 import "./Quiz.css"
 
 const STORAGE_KEY = "quizState";
+const QUESTION_TIME = 10;
 
 function shuffleArray(array) {
     const arr = [...array];
@@ -40,10 +41,8 @@ export default function Quiz() {
     const [answerResult, setAnswerResult] = useState(null);
 
     const location = useLocation();
-    // Read sessionStorage once on mount, not on every render
     const saved = useRef(getSavedState()).current;
 
-    // If we got refreshed, location.state can be empty, so fall back to the saved difficulty
     const difficulty = location.state?.difficulty ?? saved?.difficulty;
     const resumable = Boolean(saved) && saved.difficulty === difficulty;
 
@@ -55,31 +54,32 @@ export default function Quiz() {
     const [won, setWon] = useState(() => (resumable ? saved.won : false));
     const [options, setOptions] = useState([]);
 
+    // ✅ Declared BEFORE the sessionStorage useEffect so it's in scope
+    const [timeLeft, setTimeLeft] = useState(() =>
+        resumable ? saved.timeLeft ?? QUESTION_TIME : QUESTION_TIME
+    );
 
-///Questions related
-    // Shuffle the 4 options every time we land on a new question
+    // Shuffle options when question changes
     useEffect(() => {
         if (questions.length === 0) return;
         const [, choices] = questions[currentIndex];
         setOptions(shuffleArray(choices));
     }, [questions, currentIndex]);
 
-    // Keep sessionStorage in sync so a refresh resumes instead of regenerating
+    // Keep sessionStorage in sync — timeLeft is now safely in scope
     useEffect(() => {
         if (questions.length === 0) return;
         sessionStorage.setItem(
             STORAGE_KEY,
-            JSON.stringify({ difficulty, questions, currentIndex, gameOver, won })
+            JSON.stringify({ difficulty, questions, currentIndex, gameOver, won, timeLeft })
         );
-    }, [difficulty, questions, currentIndex, gameOver, won]);
+    }, [difficulty, questions, currentIndex, gameOver, won, timeLeft]);
 
-
-///Timer related
-    const QUESTION_TIME = 10;
-    const [timeLeft, setTimeLeft] = useState(QUESTION_TIME);
-
-    // Reset when question changes
+    // ✅ Only reset when the index actually changes, not on mount
+    const prevIndexRef = useRef(currentIndex);
     useEffect(() => {
+        if (prevIndexRef.current === currentIndex) return;
+        prevIndexRef.current = currentIndex;
         setTimeLeft(QUESTION_TIME);
     }, [currentIndex]);
 
@@ -101,39 +101,34 @@ export default function Quiz() {
         }
     }, [timeLeft]);
 
-
-///Answer related
     function handleAnswer(option) {
-    if (answerResult !== null) return; // locked while animating
+        if (answerResult !== null) return;
 
-    const [, choices] = questions[currentIndex];
-    const correctAnswer = choices[0];
-    const isCorrect = option === correctAnswer;
+        const [, choices] = questions[currentIndex];
+        const correctAnswer = choices[0];
+        const isCorrect = option === correctAnswer;
 
-    setSelectedOption(option);
+        setSelectedOption(option);
 
-    // blink for 900ms (3 × 300ms steps), then show colour
-    setTimeout(() => {
-        setAnswerResult(isCorrect ? "correct" : "wrong");
-
-        // hold colour for 3 seconds, then advance
         setTimeout(() => {
-        setSelectedOption(null);
-        setAnswerResult(null);
+            setAnswerResult(isCorrect ? "correct" : "wrong");
 
-        if (!isCorrect) {
-            setGameOver(true);
-        } else if (currentIndex + 1 >= 5) {
-            setWon(true);
-            setGameOver(true);
-        } else {
-            setCurrentIndex(currentIndex + 1);
-        }
-        }, 2000);
-    }, 900);
+            setTimeout(() => {
+                setSelectedOption(null);
+                setAnswerResult(null);
+
+                if (!isCorrect) {
+                    setGameOver(true);
+                } else if (currentIndex + 1 >= 5) {
+                    setWon(true);
+                    setGameOver(true);
+                } else {
+                    setCurrentIndex(currentIndex + 1);
+                }
+            }, 2000);
+        }, 900);
     }
 
-///Quit
     function handleQuit() {
         sessionStorage.removeItem(STORAGE_KEY);
     }
@@ -189,7 +184,7 @@ export default function Quiz() {
                     <i></i><i></i><i></i>
                     <span>Question {currentIndex + 1}</span>
                 </div>
-                <div className="ret-06__wincontent" style={{textAlign:"center"}}>
+                <div className="ret-06__wincontent" style={{ textAlign: "center" }}>
                     <div className="quiz-timer">
                         {timeLeft}
                     </div>
