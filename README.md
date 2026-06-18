@@ -85,7 +85,7 @@ npm run preview
 
 Live Application:
 
-[https://your-deployment-link.com](https://akshaykrishna47.github.io/Are-You-Smarter-Than-/)
+[https://Are-You-Smarter-Than.com](https://akshaykrishna47.github.io/Are-You-Smarter-Than-/)
 
 ---
 
