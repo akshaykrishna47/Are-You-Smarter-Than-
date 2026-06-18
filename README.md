@@ -154,23 +154,23 @@ src/
 
 ### Home Page
 
-![Home Page](![alt text](image.png))
+![alt text](image.png)
 
 ### Menu Page
 
-![Menu Page](![alt text](image-1.png)g)
+![alt text](image-1.png)
 
 ### Quiz Page
 
-![Quiz Page](screenshots/quiz-page.png)
+![alt text](image-4.png)
 
 ### Victory Screen
 
-![Victory Screen](![alt text](image-3.png))
+![alt text](image-3.png)
 
 ### Game Over Screen
 
-![Game Over Screen](![alt text](image-2.png))
+![alt text](image-2.png)
 
 ---
 
