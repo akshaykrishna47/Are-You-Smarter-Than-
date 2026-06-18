@@ -71,6 +71,32 @@ export default function Quiz() {
         );
     }, [difficulty, questions, currentIndex, gameOver, won]);
 
+const QUESTION_TIME = 10;
+const [timeLeft, setTimeLeft] = useState(QUESTION_TIME);
+
+// Reset when question changes
+useEffect(() => {
+    setTimeLeft(QUESTION_TIME);
+}, [currentIndex]);
+
+// Countdown
+useEffect(() => {
+    if (gameOver || answerResult !== null) return;
+
+    const interval = setInterval(() => {
+        setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+}, [gameOver, answerResult]);
+
+// Time ran out
+useEffect(() => {
+    if (timeLeft <= 0) {
+        setGameOver(true);
+    }
+}, [timeLeft]);
+
     function handleAnswer(option) {
     if (answerResult !== null) return; // locked while animating
 
@@ -124,7 +150,7 @@ export default function Quiz() {
                     </div>
                     <div className="ret-06__gameover-body">
                         <h1 className={`ret-06__gameover-title ${won ? "ret-06__gameover-title--win" : "ret-06__gameover-title--lose"}`}>
-                            {won ? "You Win!" : "You Lose"}
+                            {won ? "You Win!" : "Game Over"}
                         </h1>
                         <p className="ret-06__gameover-msg">
                             {won
@@ -157,6 +183,9 @@ export default function Quiz() {
                     <span>Question {currentIndex + 1}</span>
                 </div>
                 <div className="ret-06__wincontent" style={{textAlign:"center"}}>
+                    <div className="quiz-timer">
+                        {timeLeft}
+                    </div>
                     {currentQuestion}
                     <div className="ret-06__row">
                         {options.map((opt) => {

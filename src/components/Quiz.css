@@ -196,3 +196,22 @@
   letter-spacing: .08em;
   margin: 0 0 8px;
 }
+
+.quiz-timer {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+    background: #111;
+
+    color: #ffde22;
+    font-size: 1rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 4px solid #ffb222;
+}
