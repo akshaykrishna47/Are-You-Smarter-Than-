@@ -168,13 +168,12 @@ export default function Quiz() {
                     <div className="credits__inner">
                         <p>Quiz created by Akky</p>
                         <p>Lead Question Inventor: Akky</p>
-                        <p>Assistant Question Inventor: Also Akky</p>
+                        <p>Asst. Question Inventor: Also Akky</p>
                         <p>Senior Button Click Engineer: Akky</p>
                         <p>Chief Timer Enjoyer: Akky</p>
 
                         <p>☕ Powered by questionable amounts of caffeine</p>
                         <p>🦆 Official Duck Consultant: Sir Quacksalot</p>
-                        <p>🧠 Brain Cells Lost During Development: 17</p>
                         <p>🐛 Bugs Found: 48</p>
                         <p>🐛 Bugs Fixed: 47</p>
                         <p>🐛 The Remaining Bug: Classified</p>
@@ -184,10 +183,6 @@ export default function Quiz() {
                         <p>The Rubber Duck</p>
                         <p>The Last Remaining Brain Cell</p>
                         <p>The Person Reading This</p>
-
-                        <p>Fun Fact #1: No quizzes were harmed during development.</p>
-                        <p>Fun Fact #2: The timer judges you silently.</p>
-                        <p>Fun Fact #3: Wrong answers are stored in a secret vault.</p>
 
                         <p>Achievement Unlocked:</p>
                         <p>"You Actually Reached The Credits"</p>
