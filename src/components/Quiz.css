@@ -219,7 +219,6 @@
 /* Override gameover layout to pin box at bottom */
 .ret-06__gameover {
     position: relative;
-    justify-content: flex-start; 
     padding-bottom: 2rem;
     overflow: hidden;
 }
