@@ -54,7 +54,7 @@ export default function Quiz() {
     const [won, setWon] = useState(() => (resumable ? saved.won : false));
     const [options, setOptions] = useState([]);
 
-    // ✅ Declared BEFORE the sessionStorage useEffect so it's in scope
+    // Declared BEFORE the sessionStorage useEffect so it's in scope
     const [timeLeft, setTimeLeft] = useState(() =>
         resumable ? saved.timeLeft ?? QUESTION_TIME : QUESTION_TIME
     );
