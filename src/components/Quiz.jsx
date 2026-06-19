@@ -164,6 +164,45 @@ export default function Quiz() {
                         </Link>
                     </div>
                 </div>
+                <div className="credits">
+                    <div className="credits__inner">
+                        <p>Quiz created by Akky</p>
+                        <p>Lead Question Inventor: Akky</p>
+                        <p>Assistant Question Inventor: Also Akky</p>
+                        <p>Senior Button Click Engineer: Akky</p>
+                        <p>Chief Timer Enjoyer: Akky</p>
+
+                        <p>☕ Powered by questionable amounts of caffeine</p>
+                        <p>🦆 Official Duck Consultant: Sir Quacksalot</p>
+                        <p>🧠 Brain Cells Lost During Development: 17</p>
+                        <p>🐛 Bugs Found: 48</p>
+                        <p>🐛 Bugs Fixed: 47</p>
+                        <p>🐛 The Remaining Bug: Classified</p>
+
+                        <p>Special Thanks To:</p>
+                        <p>The Stack Overflow Wizards</p>
+                        <p>The Rubber Duck</p>
+                        <p>The Last Remaining Brain Cell</p>
+                        <p>The Person Reading This</p>
+
+                        <p>Fun Fact #1: No quizzes were harmed during development.</p>
+                        <p>Fun Fact #2: The timer judges you silently.</p>
+                        <p>Fun Fact #3: Wrong answers are stored in a secret vault.</p>
+
+                        <p>Achievement Unlocked:</p>
+                        <p>"You Actually Reached The Credits"</p>
+
+                        <p>There is no post-credit scene.</p>
+                        <p>Seriously.</p>
+                        <p>Stop waiting.</p>
+                        <p>Go touch some grass.</p>
+                        <p>🌱</p>
+
+                        <p>...still here?</p>
+                        <p>Okay.</p>
+                        <p>Thanks for playing! ❤️</p>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -172,6 +211,7 @@ export default function Quiz() {
 
     return (
         <div style={{
+            background:"rgba(26, 11, 46, 0.7)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

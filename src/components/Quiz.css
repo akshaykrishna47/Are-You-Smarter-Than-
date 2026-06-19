@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 .ret-06__win {
-  background: rgba(26,11,46,.55);
-  backdrop-filter: blur(8px);
+  background: rgb(26, 11, 46);
   border: 2px solid #ff71ce;
   border-radius: 6px;
   text-align: left;
@@ -104,6 +103,7 @@
 }
 
 .ret-06__gameover {
+  background: rgba(26, 11, 46, 0.356);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +117,7 @@
 .ret-06__gameover-box {
   width: 100%;
   max-width: 480px;
-  background: rgba(26,11,46,.55);
+  background: rgba(26,11,46);
   backdrop-filter: blur(8px);
   border-radius: 6px;
   overflow: hidden;
@@ -126,12 +126,12 @@
 
 .ret-06__gameover-box--win {
   border: 2px solid #05ffa1;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(5,255,161,.4), 0 0 40px rgba(5,255,161,.2);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(5,255,161,.4), 0 0 40px rgba(5,255,161);
 }
 
 .ret-06__gameover-box--lose {
   border: 2px solid #ff2975;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(255,41,117,.4), 0 0 40px rgba(255,41,117,.2);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1), 8px 8px 0 rgba(255,41,117,.4), 0 0 40px rgba(255,41,117);
 }
 
 .ret-06__gameover-bar {
@@ -232,7 +232,8 @@
 /* Credits roll behind */
 .credits {
     position: absolute;
-    top: 50%; left: 0;
+    top: 40%;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -241,11 +242,27 @@
     overflow: hidden;
     z-index: 1;
     pointer-events: none;
+
+    /* fade out near the top */
+    mask-image: linear-gradient(
+        to top,
+        transparent 0%,
+        black 15%,
+        black 70%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to top,
+        transparent 0%,
+        black 15%,
+        black 70%,
+        transparent 100%
+    );
 }
 
 .credits__inner {
+    animation: creditsRoll 25s linear forwards;
     font-family:'Courier New', Courier, monospace;
-    animation: creditsRoll 10s linear forwards;
     text-align: center;
     color: #e9d5ff;
     font-size: 1.1rem;
@@ -255,5 +272,5 @@
 
 @keyframes creditsRoll {
     from { transform: translateY(0); }
-    to   { transform: translateY(-50%); }
+    to   { transform: translateY(-100%); }
 }
