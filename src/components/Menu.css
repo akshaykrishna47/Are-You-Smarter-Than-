@@ -1,7 +1,5 @@
-/* ─── Menu — neon pricing-card aesthetic adapted for the AYST menu ───── */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Exo+2:wght@300;700;900&display=swap');
 
-/* @property is document-level; declared once here. */
 @property --mn-crd-a {
   syntax: '<angle>';
   inherits: false;
