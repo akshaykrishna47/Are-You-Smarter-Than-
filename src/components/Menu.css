@@ -10,7 +10,7 @@
 
 .menu-neon {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   background: rgba(26, 11, 46, 0.7);
   font-family: 'Space Grotesk', sans-serif;
   color: #f0f0ff;
